@@ -46,36 +46,38 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Resources
+###Server Application 
+A backend application will be provided. You can perform some requests to it in order to do  all needed operations with devices. You do not need to make any changes on serverapp. This app does not have data persistency implemented. So, any change in the data (creation,  update or delete) will be lost if you kill the server. A new start will have the data in the initial  state. 
+These are examples for the requests available: 
+### GET devices 
+GET http://localhost:3000/devices 
+### POST device 
+POST http://localhost:3000/devices 
+Content-Type: application/json 
+```
+{ 
+ "system_name": "my-mac", 
+ "type": "MAC", 
+ "hdd_capacity": "64" 
+} 
+```
+### GET device 
+GET http://localhost:3000/devices/e7ocoQ2n3 
+### PUT device 
+PUT http://localhost:3000/devices/e7ocoQ2n3 
+Content-Type: application/json 
+```{ 
+ "system_name": "my-win-server", 
+ "type": "WINDOWS_SERVER", 
+ "hdd_capacity": "500" 
+}
+```
+### DELETE device 
+DELETE http://localhost:3000/devices/e8okoP2l5
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Please download or clone this repository in order to use the server app.  https://github.com/NinjaMSP/devicesTask_serverApp
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Resources
-Sort table: 
+###Sort table: 
 https://www.smashingmagazine.com/2020/03/sortable-tables-react/
